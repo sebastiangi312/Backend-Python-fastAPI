@@ -1,18 +1,12 @@
 from mimesis import Person
-import csv
+import pandas as pd
 
 nr_of_rows = 100000
 nr_of_columns = 100
 
 randomGenerator = Person()
 
-with open('dummy.csv', 'w') as csv_file:
-    file_writer = csv.writer(csv_file, delimiter=',',
-                             quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator="\n")
-    lines = []
-    for row in range(nr_of_rows):
-        line = []
-        for column in range(nr_of_columns):
-            line.append(randomGenerator.name())
-        lines.append(line)
-    file_writer.writerows(lines)
+data = [[randomGenerator.name() for i in range(nr_of_columns)] for j in range(nr_of_rows)]
+df = pd.DataFrame(data)
+
+df.to_csv("dummy.csv", index=False)
