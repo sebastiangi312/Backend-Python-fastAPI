@@ -1,5 +1,6 @@
+
 from pymongo import MongoClient
-from config import Config
+from infrastructure.persistence.mongo_db.config import Config
 
 db_config = Config()
 client = MongoClient(db_config.CONNECTION_STR)

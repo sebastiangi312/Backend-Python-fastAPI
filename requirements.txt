@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+pymongo
+pandas
+mimesis
+python-multipart
+environs

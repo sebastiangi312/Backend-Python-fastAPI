@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from io import StringIO
-from infrastructure.persistence.mongo.csv_repository import add
+from infrastructure.persistence.mongo_db.mongo_csv_repository import add
 import pandas as pd
 
 app = FastAPI()

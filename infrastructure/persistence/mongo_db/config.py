@@ -3,7 +3,7 @@ from environs import Env
 env = Env()
 env.read_env()
 
-DB_ENGINE: str = env("DB_HOST")
+DB_ENGINE: str = env("DB_ENGINE")
 DB_IP: str = env("DB_IP")
 DB_PORT: str = env("DB_PORT")
 
